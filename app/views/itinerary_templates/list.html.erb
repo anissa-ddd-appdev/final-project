@@ -1,0 +1,122 @@
+<h1>
+  Itinerary list
+</h1>
+
+<a href="/new_itinerary_form">
+  Add a new itinerary
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Photo
+    </th>
+
+    <th>
+      Url
+    </th>
+
+    <th>
+      Description
+    </th>
+
+    <th>
+      Length
+    </th>
+
+    <th>
+      Country
+    </th>
+
+    <th>
+      Region
+    </th>
+
+    <th>
+      Owner
+    </th>
+
+    <th>
+      Travel time
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @itineraries.each do |itinerary| %>
+  <tr>
+    <td>
+      <%= itinerary.id %>
+    </td>
+
+    <td>
+      <%= itinerary.name %>
+    </td>
+
+    <td>
+      <%= itinerary.photo %>
+    </td>
+
+    <td>
+      <%= itinerary.url %>
+    </td>
+
+    <td>
+      <%= itinerary.description %>
+    </td>
+
+    <td>
+      <%= itinerary.length %>
+    </td>
+
+    <td>
+      <%= itinerary.country %>
+    </td>
+
+    <td>
+      <%= itinerary.region_id %>
+    </td>
+
+    <td>
+      <%= itinerary.owner_id %>
+    </td>
+
+    <td>
+      <%= itinerary.travel_time %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(itinerary.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(itinerary.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/itineraries/<%= itinerary.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

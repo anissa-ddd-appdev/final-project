@@ -1,0 +1,103 @@
+<h1>
+  Itinerary #<%= @itinerary.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/itineraries">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_itinerary_form/<%= @itinerary.id %>">
+      Edit itinerary
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_itinerary/<%= @itinerary.id %>">
+      Delete itinerary
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @itinerary.name %>
+  </dd>
+
+  <dt>
+    Photo
+  </dt>
+  <dd>
+    <%= @itinerary.photo %>
+  </dd>
+
+  <dt>
+    Url
+  </dt>
+  <dd>
+    <%= @itinerary.url %>
+  </dd>
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+    <%= @itinerary.description %>
+  </dd>
+
+  <dt>
+    Length
+  </dt>
+  <dd>
+    <%= @itinerary.length %>
+  </dd>
+
+  <dt>
+    Country
+  </dt>
+  <dd>
+    <%= @itinerary.country %>
+  </dd>
+
+  <dt>
+    Region
+  </dt>
+  <dd>
+    <%= @itinerary.region_id %>
+  </dd>
+
+  <dt>
+    Owner
+  </dt>
+  <dd>
+    <%= @itinerary.owner_id %>
+  </dd>
+
+  <dt>
+    Travel time
+  </dt>
+  <dd>
+    <%= @itinerary.travel_time %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@itinerary.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@itinerary.updated_at) %> ago
+  </dd>
+</dl>
+

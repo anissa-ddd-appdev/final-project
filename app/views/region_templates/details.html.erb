@@ -1,0 +1,47 @@
+<h1>
+  Region #<%= @region.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/regions">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_region_form/<%= @region.id %>">
+      Edit region
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_region/<%= @region.id %>">
+      Delete region
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @region.name %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@region.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@region.updated_at) %> ago
+  </dd>
+</dl>
+

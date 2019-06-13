@@ -1,0 +1,27 @@
+<h1>
+  Edit region #<%= @region.id %>
+</h1>
+
+<hr>
+
+<%= render("region_templates/validation_failures.html.erb") %>
+
+<form action="/update_region_record/<%= @region.id %>" method="post">
+  <div>
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" value="<%= @region.name %>">
+  </div>
+
+  <button>
+    Update region
+  </button>
+</form>
+
+<hr>
+
+<a href="/regions">
+  Go back
+</a>

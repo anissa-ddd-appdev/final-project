@@ -1,0 +1,91 @@
+<h1>
+  Edit itinerary #<%= @itinerary.id %>
+</h1>
+
+<hr>
+
+<%= render("itinerary_templates/validation_failures.html.erb") %>
+
+<form action="/update_itinerary_record/<%= @itinerary.id %>" method="post">
+  <div>
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" value="<%= @itinerary.name %>">
+  </div>
+
+  <div>
+    <label for="photo">
+      Photo
+    </label>
+
+    <input type="text" id="photo" name="photo" value="<%= @itinerary.photo %>">
+  </div>
+
+  <div>
+    <label for="url">
+      Url
+    </label>
+
+    <input type="text" id="url" name="url" value="<%= @itinerary.url %>">
+  </div>
+
+  <div>
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" value="<%= @itinerary.description %>">
+  </div>
+
+  <div>
+    <label for="length">
+      Length
+    </label>
+
+    <input type="text" id="length" name="length" value="<%= @itinerary.length %>">
+  </div>
+
+  <div>
+    <label for="country">
+      Country
+    </label>
+
+    <input type="text" id="country" name="country" value="<%= @itinerary.country %>">
+  </div>
+
+  <div>
+    <label for="region_id">
+      Region
+    </label>
+
+    <input type="text" id="region_id" name="region_id" value="<%= @itinerary.region_id %>">
+  </div>
+
+  <div>
+    <label for="owner_id">
+      Owner
+    </label>
+
+    <input type="text" id="owner_id" name="owner_id" value="<%= @itinerary.owner_id %>">
+  </div>
+
+  <div>
+    <label for="travel_time">
+      Travel time
+    </label>
+
+    <input type="text" id="travel_time" name="travel_time" value="<%= @itinerary.travel_time %>">
+  </div>
+
+  <button>
+    Update itinerary
+  </button>
+</form>
+
+<hr>
+
+<a href="/itineraries">
+  Go back
+</a>

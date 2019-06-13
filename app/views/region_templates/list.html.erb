@@ -1,0 +1,58 @@
+<h1>
+  Region list
+</h1>
+
+<a href="/new_region_form">
+  Add a new region
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @regions.each do |region| %>
+  <tr>
+    <td>
+      <%= region.id %>
+    </td>
+
+    <td>
+      <%= region.name %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(region.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(region.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/regions/<%= region.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

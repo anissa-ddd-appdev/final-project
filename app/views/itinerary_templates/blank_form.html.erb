@@ -1,0 +1,88 @@
+<h1>
+  Add a New Trip
+</h1>
+
+<hr>
+
+<%= render("itinerary_templates/validation_failures.html.erb") %>
+
+<form action="/insert_itinerary_record" method="post">
+  <div>
+    <label for="name">
+      Trip Name
+    </label>
+
+    <input type="text" id="name" name="name" value="<%= @itinerary.name %>">
+  </div>
+
+  <div>
+    <label for="photo">
+      Photo
+    </label>
+
+    <input id="photo" name="photo" placeholder="Enter link to photo URL" value="<%= @itinerary.photo %>">
+  </div>
+  
+  <div>
+    <label for="country">
+      Country
+    </label>
+
+    <input type="text" id="country" name="country" value="<%= @itinerary.country %>">
+  </div>
+
+  <div>
+    <label for="description">
+      Description
+    </label>
+
+    <textarea id="description" name="description" placeholder="Enter a short description of your trip itinerary!" value="<%= @itinerary.description %>"></textarea>
+  </div>
+
+  <div>
+    <label for="length">
+      Length
+    </label>
+
+    <input type="text" id="length" name="length" value="<%= @itinerary.length %>">
+  </div>
+
+    <!--<input type="hidden" id="region_id" name="region_id" value="<%= @itinerary.region_id %>">-->
+    
+    <label for="region_dropdown">Region</label>
+      <select id="region_dropdown" name="region_id">
+        <% Region.all.each do |a_region| %>
+          <option value="<%= a_region.id %>">
+            <%= a_region.name %>
+          </option>
+        <% end %>
+      </select>
+
+    <input type="hidden" name="owner_id" value="<%= current_user.id %>">
+
+  <div>
+    <label for="travel_time">
+      Travel Time
+    </label>
+
+    <input type="text" id="travel_time" name="travel_time" placeholder="Enter when you traveled" value="<%= @itinerary.travel_time %>">
+  </div>
+
+  <div>
+    <label for="url">
+      Link to Trip Itinerary
+    </label>
+
+    <input id="url" name="url" placeholder="Enter the URL to the trip itinerary!" value="<%= @itinerary.url %>">
+  </div>
+  
+  <button>
+    Add Trip
+  </button>
+</form>
+
+<hr>
+
+<a href="/itineraries">
+  Go back
+</a>

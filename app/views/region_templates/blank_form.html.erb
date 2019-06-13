@@ -1,0 +1,27 @@
+<h1>
+  Add a new region
+</h1>
+
+<hr>
+
+<%= render("region_templates/validation_failures.html.erb") %>
+
+<form action="/insert_region_record" method="post">
+  <div>
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" value="<%= @region.name %>">
+  </div>
+
+  <button>
+    Create region
+  </button>
+</form>
+
+<hr>
+
+<a href="/regions">
+  Go back
+</a>
