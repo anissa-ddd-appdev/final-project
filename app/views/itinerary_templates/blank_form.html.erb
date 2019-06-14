@@ -22,7 +22,7 @@
 
     <input id="photo" name="photo" placeholder="Enter link to photo URL" value="<%= @itinerary.photo %>">
   </div>
-  
+
   <div>
     <label for="country">
       Country
@@ -47,8 +47,6 @@
     <input type="text" id="length" name="length" value="<%= @itinerary.length %>">
   </div>
 
-    <!--<input type="hidden" id="region_id" name="region_id" value="<%= @itinerary.region_id %>">-->
-    
     <label for="region_dropdown">Region</label>
       <select id="region_dropdown" name="region_id">
         <% Region.all.each do |a_region| %>
@@ -76,13 +74,11 @@
     <input id="url" name="url" placeholder="Enter the URL to the trip itinerary!" value="<%= @itinerary.url %>">
   </div>
   
-  <button>
+  <button onclick="goBack()">
     Add Trip
   </button>
 </form>
 
+
 <hr>
 
-<a href="/itineraries">
-  Go back
-</a>

@@ -7,10 +7,17 @@ class IndexController < ApplicationController
      render("trips/mexico.html.erb")
    end 
    
-   def region_itineraries
+   def us_itineraries
 
-     @region = Itinerary.all.where({ :region_id => "1"})
+     @region = Itinerary.all.where({ :region_id => "9"})
     
     render("trips/united_states.html.erb")
+   end
+   
+   def asia_itineraries
+
+     @region = Itinerary.all.where({ :region_id => "2"})
+    
+    render("trips/asia.html.erb")
    end 
 end

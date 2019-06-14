@@ -33,7 +33,7 @@ class ItinerariesController < ApplicationController
     if @itinerary.valid?
       @itinerary.save
 
-      redirect_to("/itineraries", { :notice => "Itinerary created successfully." })
+      redirect_to("/", { :notice => "Itinerary created successfully." })
     else
       render("itinerary_templates/blank_form.html.erb")
     end
