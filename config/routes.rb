@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   
   match("/", { :controller => "index", :action => "regions", :via => "get" })
   
-  match("/united_states", { :controller => "index", :action => "united_states", :via => "get" })
+  match("/1", { :controller => "index", :action => "region_itineraries", :via => "get" })
   
   match("/mexico", { :controller => "index", :action => "mexico", :via => "get" })
   

@@ -14,17 +14,9 @@
       ID
     </th>
 
-    <th>
-      Name
-    </th>
+    <th>Name</th>
 
-    <th>
-      Photo
-    </th>
-
-    <th>
-      Url
-    </th>
+    <th>Photo</th>
 
     <th>
       Description
@@ -50,16 +42,6 @@
       Travel time
     </th>
 
-    <th>
-      Created at
-    </th>
-
-    <th>
-      Updated at
-    </th>
-
-    <th>
-    </th>
   </tr>
 
   <% @itineraries.each do |itinerary| %>
@@ -73,11 +55,7 @@
     </td>
 
     <td>
-      <%= itinerary.photo %>
-    </td>
-
-    <td>
-      <%= itinerary.url %>
+      <img src="<%= itinerary.photo %>">
     </td>
 
     <td>
@@ -105,18 +83,11 @@
     </td>
 
     <td>
-      <%= time_ago_in_words(itinerary.created_at) %> ago
-    </td>
-
-    <td>
-      <%= time_ago_in_words(itinerary.updated_at) %> ago
-    </td>
-
-    <td>
-      <a href="/itineraries/<%= itinerary.id %>">
-        Show details
+      <a href="<%= itinerary.url %>" target="_blank">
+        View Trip Itinerary
       </a>
     </td>
   </tr>
   <% end %>
 </table>
+

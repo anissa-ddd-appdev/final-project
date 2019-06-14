@@ -18,6 +18,52 @@ Return Home
 Add Itinerary
 </a></button>
     
+<table>
+  <tr>
+    <th>Trip Name</th>
+    <th>Photo</th>
+    <th>Country</th>
+    <th>Description</th>
+    <th>Length</th>
+    <th>Travel Time</th>
+    <th>Link to Itinerary</th>
+  </tr>
+
+  <% @region.each do |trip| %>
+  <tr>
+    <td>
+      <%= trip.name %>
+    </td>
+
+    <td>
+      <%= trip.photo %>
+    </td>
+    
+    <td>
+      <%= trip.country %>
+    </td>
+
+    <td>
+      <%= trip.description %>
+    </td>
+
+    <td>
+      <%= trip.length %>
+    </td>
+
+    <td>
+      <%= trip.travel_time %>
+    </td>
+
+    <td>
+      <a href=<%= trip.url %>>
+        View Itinerary
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
 </body>
 
 </html>

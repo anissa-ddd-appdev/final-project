@@ -74,4 +74,6 @@ class ItinerariesController < ApplicationController
 
     redirect_to("/itineraries", { :notice => "Itinerary deleted successfully." })
   end
+  
+
 end
